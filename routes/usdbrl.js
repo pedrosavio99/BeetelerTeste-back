@@ -14,16 +14,7 @@ const options ={
 
 var infoCoin = []
 const dollar_brl = async function(erro,res,body){
-    let json = JSON.parse(body)
-    infoCoin.push(json)
-    console.log(json[0]['bid'])
-    cotacao = json[0]['bid']
-    nome = json[0]['name']
-    alta = json[0]['high']
-    baixa = json[0]['low']
-    dia =  json[0]['create_date']
-    infoCoin.push(cotacao,nome,alta,baixa,dia)
-    console.log(cotacao, dia, nome, alta)
+
     console.log('zedo')
 }
 
