@@ -14,14 +14,16 @@ const options ={
 
 var infoCoin = []
 const dollar_brl = async function(erro,res,body){
-    let json = JSON.parse(body)
-    cotacao = json.USDBRL['bid']
-    nome = json.USDBRL['name']
-    alta = json.USDBRL['high']
-    baixa = json.USDBRL['low']
-    dia =  json.USDBRL['create_date']
-    infoCoin.push(cotacao,nome,alta,baixa,dia)
-    console.log(cotacao, dia, nome, alta)
+    // let json = JSON.parse(body)
+    // console.log(json)
+    // // cotacao = json.USDBRL['bid']
+    // nome = json.USDBRL['name']
+    // alta = json.USDBRL['high']
+    // baixa = json.USDBRL['low']
+    // dia =  json.USDBRL['create_date']
+    // infoCoin.push(cotacao,nome,alta,baixa,dia)
+    // console.log(cotacao, dia, nome, alta)
+    console.log('zedo')
 }
 
 request(options, dollar_brl)
