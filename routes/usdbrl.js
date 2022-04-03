@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const request = require('request')
 
-const moedas = 'USD-BRL,BTC-EUR,BTC-USD'
+const moedas = 'USD-BRL'
 
 const options ={ 
-    url: `https://economia.awesomeapi.com.br/last/${moedas}`,
+    url: `https://economia.awesomeapi.com.br/json/daily/${moedas}/5`,
     method: 'GET',
     headers: {
         'Accept': 'application/json',
@@ -14,15 +14,16 @@ const options ={
 
 var infoCoin = []
 const dollar_brl = async function(erro,res,body){
-    // let json = JSON.parse(body)
-    // console.log(json)
-    // // cotacao = json.USDBRL['bid']
-    // nome = json.USDBRL['name']
-    // alta = json.USDBRL['high']
-    // baixa = json.USDBRL['low']
-    // dia =  json.USDBRL['create_date']
-    // infoCoin.push(cotacao,nome,alta,baixa,dia)
-    // console.log(cotacao, dia, nome, alta)
+    let json = JSON.parse(body)
+    infoCoin.push(json)
+    console.log(json[0]['bid'])
+    cotacao = json[0]['bid']
+    nome = json[0]['name']
+    alta = json[0]['high']
+    baixa = json[0]['low']
+    dia =  json[0]['create_date']
+    infoCoin.push(cotacao,nome,alta,baixa,dia)
+    console.log(cotacao, dia, nome, alta)
     console.log('zedo')
 }
 
